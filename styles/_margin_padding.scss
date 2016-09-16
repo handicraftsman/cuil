@@ -1,0 +1,11 @@
+@each $iSize in $vSizesPX {
+  @each $iSide in $vSides {
+    .cuil-margin#{$iSide}-#{$iSize} {
+      margin#{$iSide}: #{$iSize};
+    }
+
+    .cuil-padding#{$iSide}-#{$iSize} {
+      padding#{$iSide}: #{$iSize};
+    }
+  }
+}

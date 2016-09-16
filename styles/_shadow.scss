@@ -1,0 +1,5 @@
+@each $iSize in $vSizesPX {
+  .cuil-shadow-#{$iSize} {
+    box-shadow: 4px 4px #{$iSize} grey
+  }
+}

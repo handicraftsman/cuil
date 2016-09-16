@@ -1,0 +1,12 @@
+.cuil-btn {
+  @extend .cuil-padding-4px;
+  @extend .cuil-shadow-4px;
+  @extend .cuil-bg-almost-white;
+  display: inline;
+  cursor: pointer;
+}
+
+.cuil-btn:hover {
+  @extend .cuil-btn;
+  @extend .cuil-shadow-8px;
+}

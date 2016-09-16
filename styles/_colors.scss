@@ -1,0 +1,14 @@
+// Implementing colors. Can be accessed via .cuil-sel-colorname
+// Selectors & colornames can be found at _vars.scss
+
+@each $iColor, $iHex in $vColors {
+  @each $iType, $iProp in $vColorsSel {
+    .cuil-#{$iType}-#{$iColor} {
+      #{$iProp}: #{$iHex};
+    }
+
+    .cuil-hover-#{$iType}-#{$iColor}:hover {
+      #{$iProp}: #{$iHex};
+    }
+  }
+}

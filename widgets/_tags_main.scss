@@ -1,0 +1,17 @@
+// Okay.
+body {
+  font-family: $vFontFamily;
+  font-size: $vFontSize;
+  color: $vFontColor;
+}
+
+p {
+  line-height: 1.45;
+  margin: 4px;
+}
+
+@each $iType in (h1, h2, h3, h4, h5, h6) {
+  #{$iType} {
+    @extend .cuil-margin-0;
+  }
+}
