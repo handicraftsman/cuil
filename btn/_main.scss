@@ -1,3 +1,7 @@
+$mbtn_info: map-get(map-get($config, module), btn);
+
+@if map-get($mbtn_info, enabled) == true {
+
 .cuil-btn {
   @extend .cuil-padding-4px;
   @extend .cuil-shadow-4px;
@@ -9,4 +13,6 @@
 .cuil-btn:hover {
   @extend .cuil-btn;
   @extend .cuil-shadow-8px;
+}
+
 }

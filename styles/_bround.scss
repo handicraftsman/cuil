@@ -1,5 +1,0 @@
-@each $iSize in $vSizesPX {
-  .cuil-bround-#{$iSize} {
-    border-radius: #{$iSize};
-  }
-}

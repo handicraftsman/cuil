@@ -1,8 +1,0 @@
-// Implementing text sizes. Can be accessed via .cuil-sizename
-// You can see sizenames in _vars.scss
-
-@each $iName, $iSize in $vTextSizesPX {
-  .cuil-#{$iName} {
-    font-size: #{$iSize};
-  }
-}

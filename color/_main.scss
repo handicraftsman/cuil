@@ -1,7 +1,11 @@
-// Text
-$vFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$vFontSize: 14px;
-$vFontColor: #2a2b30;
+// Color Module for CUIL
+// Get info about module
+$mcolor_info: map-get(map-get($config, module), color);
+
+$vColors: null;
+$vColorsSel: null;
+
+@if map-get($mcolor_info, enabled) == true {
 
 // Colors
 $vColors: ( // Here we are implementing colors (accesed by .cuil-sel-color)
@@ -37,20 +41,16 @@ $vColorsSel: (
   "br": border-color,
 );
 
-// Sides
-$vSides: "-left", "-right", "-top", "-bottom", "";
+@each $iColor, $iHex in $vColors {
+  // Generate colors
+  @each $iType, $iProp in $vColorsSel {
+    .cuil-#{$iType}-#{$iColor} {
+      #{$iProp}: #{$iHex};
+    }
+    .cuil-hover-#{$iType}-#{$iColor}:hover {
+      #{$iProp}: #{$iHex};
+    }
+  }
+}
 
-// Sizes - normal
-
-$vSizesPX: 0, 2px, 4px, 8px, 12px, 16px, 24px;
-
-// Sizes - text
-$vTextSizesPX: (
-  "tiny": 10px,
-  "small": 12px,
-  "medium": 15px,
-  "large": 18px,
-  "xlarge": 24px,
-  "xxlarge": 36px,
-  "jumbo": 64px,
-);
+} 

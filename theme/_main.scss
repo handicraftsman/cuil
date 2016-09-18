@@ -1,0 +1,81 @@
+// Theme Module for CUIL
+// Get info about module
+$mtheme_info: map-get(map-get($config, module), theme);
+
+@if map-get($mtheme_info, enabled) == true {
+
+// Check Deps
+@if map-get($mcolor_info, enabled) == false {
+  @error "Color Module is not enabled!"
+};
+
+// Main Color-Theme
+$color: map-get($mtheme_info, base_color);
+$step: map-get($mtheme_info, step);
+$step_count: map-get($mtheme_info, step_count);;
+
+// Generate i-xx-yz classes
+@for $i from 1 through $step_count {
+  @each $iType, $iProp in $vColorsSel {
+    .cuil-theme-#{$iType}-l#{$i} {
+      @if $iType == bg {
+        color: #000;
+      };
+      #{$iProp}: $color + hsla(0, 0, $i*$step, 100) !important
+    };
+    .cuil-hover-theme-#{$iType}-l#{$i}:hover {
+      @if $iType == bg {
+        color: #000;
+      };
+      #{$iProp}: $color + hsla(0, 0, $i*$step, 100) !important
+    };
+
+    .cuil-theme-#{$iType}-d#{$i} {
+      @if $iType == bg {
+        color: #FFF;
+      };
+      #{$iProp}: $color - hsla(0, 0, $i*$step, 100) !important
+    };
+    .cuil-hover-theme-#{$iType}-d#{$i}:hover {
+      @if $iType == bg {
+        color: #FFF;
+      };
+      #{$iProp}: $color - hsla(0, 0, $i*$step, 100) !important
+    };
+  };
+};
+
+@each $iType, $iProp in $vColorsSel {
+  .cuil-theme-#{$iType}-light {
+    @extend .cuil-theme-#{$iType}-l5;
+  };
+  .cuil-theme-#{$iType}-dark {
+    @extend .cuil-theme-#{$iType}-d5;
+  };
+  .cuil-theme-#{$iType}-action {
+    @extend .cuil-theme-#{$iType}-dark
+  }
+  .cuil-theme-#{$iType} {
+    #{$iProp}: $color !important;
+  }
+  .cuil-hover-theme-#{$iType}:hover {
+    #{$iProp}: $color + hsla(0, 25, 3*$step, 100) !important
+  }
+}
+
+/*
+code {
+  color: #D8D8D8;
+  background-color: $color - hsla(0, 0, 8*$step, 100);
+  display: inline-block;
+  padding: 5px;
+  margin: 8px;
+  border-radius: 8px;
+  box-shadow: 4px 0px 4px #555555;
+  width: 97%;
+  align: center;
+}
+
+*/
+
+}

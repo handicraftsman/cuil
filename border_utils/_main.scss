@@ -1,0 +1,11 @@
+$mborderUtils_info: map-get(map-get($config, module), border_utils);
+
+@if map-get($mborderUtils_info, enabled) == true {
+
+@each $iSize in $vSizesPX {
+  .cuil-bround-#{$iSize} {
+    border-radius: #{$iSize};
+  };
+};
+
+}

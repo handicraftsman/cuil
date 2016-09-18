@@ -1,0 +1,32 @@
+$mbox_info: map-get(map-get($config, module), box);
+
+@if map-get($mbox_info, enabled) == true {
+
+@each $iSize in $vSizesPX {
+  @each $iSide in $vSides {
+    .cuil-margin#{$iSide}-#{$iSize} {
+      margin#{$iSide}: #{$iSize};
+    }
+
+   .cuil-padding#{$iSide}-#{$iSize} {
+      padding#{$iSide}: #{$iSize};
+    }
+  }
+}
+
+@each $iSize in $vSizesPX {
+  .cuil-shadow-#{$iSize} {
+    box-shadow: 4px 4px #{$iSize} grey
+  }
+}
+
+.cuil-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+} @else {
+  @error "REALLY? DISABLED BOX MODULE?"
+}

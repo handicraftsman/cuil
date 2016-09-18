@@ -1,0 +1,59 @@
+$mbadges_info: map-get(map-get($config, module), badges);
+
+@if map-get($mbadges_info, enabled) == true {
+
+// Check Deps
+@if map-get($mborderUtils_info, enabled) == false {
+  @error "Border-Utils Module is not enabled!"
+};
+@if map-get($mcolor_info, enabled) == false {
+  @error "Colors Module is not enabled!"
+};
+
+.cuil-badge { // Defining basic badge.
+  font-family: Monospace;
+  font-size: $vFontSize - 1;
+
+  @extend .cuil-bround-8px;
+
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+
+  display: inline-block;
+
+  width: 98%;
+  .cuil-badge-small {
+    width: auto;
+  };
+};
+
+code {
+  @extend .cuil-bg-black;
+  @extend .cuil-tx-white;
+  @extend .cuil-badge;
+};
+
+pre code {
+  @extend code;
+  @extend .cuil-shadow-4px;
+  margin: 8px;
+  padding: 4px;
+};
+
+kbd {
+  @extend .cuil-bg-dark-grey;
+  @extend .cuil-tx-white;
+  @extend .cuil-badge;
+};
+
+samp {
+  @extend .cuil-bg-light-grey;
+  @extend .cuil-tx-black;
+  @extend .cuil-badge;
+};
+
+}

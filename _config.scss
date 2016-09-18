@@ -1,0 +1,66 @@
+// TODO: FIX DEP HELL!!!
+$config: (
+  // Our modules
+  module: (
+    // Vars Module
+    // Does not keep any CSS. Only variables. When disabled, bad things WILL happen.
+    misc_vars: (
+      enabled: true,
+    ),
+
+    // Box Module
+    // Basic layout.
+    box: (
+      enabled: true,
+    ),
+
+    // Text Module
+    // Allows basic text manipulations
+    text: (
+      enabled: true,
+    ),
+
+    // Badges Module
+    // We don't want just plain text!
+    badges: (
+      enabled: true,
+    ),
+
+    // Card Module
+    // Fancy pages?
+    card: (
+      enabled: true,
+    ),
+
+    // Button Module
+    btn: (
+      enabled: true,
+    ),
+
+    // Border-Utils Module
+    // For fancy borders
+    border_utils: (
+      enabled: true,
+    ),
+
+    // Color Module
+    // Make your work colorful!
+    color: (
+      enabled: true,
+    ),
+
+    // Theme Module
+    // Allows creating own themes
+    // Depends on color module
+    theme: (
+      enabled: true,
+
+      // Here you can change your color theme
+      base_color: #2C75A0,
+
+      // Changing next 2 options is not recommended
+      step: 5,
+      step_count: 5,
+    ),
+  )
+)

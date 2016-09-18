@@ -1,20 +1,33 @@
 /* CUIL library - CSS part */
 
-// Import vars
-@import "vars";
+// Import config
+@import "config";
 
-// Import styles
-@import "styles/colors";
-@import "styles/text_size";
-@import "styles/margin_padding";
-@import "styles/shadow";
-@import "styles/bround";
+// Import vars module
+@import "misc_vars/main";
 
-// Import properties
-@import "properties/container";
+// Import box module
+@import "box/main";
 
-// Import widgets
-@import "widgets/tags_main";
-@import "widgets/badges";
-@import "widgets/card";
-@import "widgets/btn";
+// :P
+@if map-get($mvars_info, enabled) == false {
+  @error "You really tried to disable variables?)"
+};
+
+// Import text module
+@import "text/main";
+
+// Import border_utils module
+@import "border_utils/main";
+
+// Import color module
+@import "color/main";
+
+// Import badge module
+@import "badges/main";
+
+// Import card module
+@import "card/main";
+
+// Import theme module
+@import "theme/main";
