@@ -1,0 +1,15 @@
+@if map-get($mtheme_info, enabled) == true &&
+    map-get($mtheme_info, btn_enabled) == true {
+
+.cuil-btn.cuil-btn-theme {
+  @extend .cuil-theme-bg-d5;
+  .cuil-btn-on {
+    @extend .cuil-theme-bg-d2;
+  };
+};
+
+.cuil-btn:hover.cuil-btn-theme {
+  @extend .cuil-hover-theme-bg;
+};
+
+}

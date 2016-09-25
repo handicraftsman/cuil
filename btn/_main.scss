@@ -3,15 +3,28 @@ $mbtn_info: map-get(map-get($config, module), btn);
 @if map-get($mbtn_info, enabled) == true {
 
 .cuil-btn {
-  @extend .cuil-padding-4px;
+  @extend .cuil-padding-8px;
+  @extend .cuil-margin-4px;
+  outline: 0;
+
   @extend .cuil-shadow-4px;
   @extend .cuil-bg-almost-white;
-  display: inline;
+  display: inline-block;
   cursor: pointer;
+
+  text-decoration:none!important;
+  text-align:center;
+
+  vertical-align:middle;
+  overflow:hidden;
+
+  -webkit-transition: background-color .3s, color .15s, box-shadow .3s, opacity 0.3s;
+  -moz-transition: background-color .3s, color .15s, box-shadow .3s, opacity 0.3s;
+  -ms-transition: background-color .3s, color .15s, box-shadow .3s, opacity 0.3s;
+  transition: background-color .3s, color .15s, box-shadow .3s, opacity 0.3s;
 }
 
 .cuil-btn:hover {
-  @extend .cuil-btn;
   @extend .cuil-shadow-8px;
 }
 

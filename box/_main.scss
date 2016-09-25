@@ -6,27 +6,43 @@ $mbox_info: map-get(map-get($config, module), box);
   @each $iSide in $vSides {
     .cuil-margin#{$iSide}-#{$iSize} {
       margin#{$iSide}: #{$iSize};
-    }
+    };
 
    .cuil-padding#{$iSide}-#{$iSize} {
       padding#{$iSide}: #{$iSize};
-    }
-  }
-}
+    };
+  };
+
+  .cuil-margin-#{$iSize} {
+    @extend .cuil-margin-top-#{$iSize};
+    @extend .cuil-margin-bottom-#{$iSize};
+    @extend .cuil-margin-left-#{$iSize};
+    @extend .cuil-margin-right-#{$iSize};
+    margin: #{$iSize};
+  };
+
+  .cuil-padding-#{$iSize} {
+    @extend .cuil-padding-top-#{$iSize};
+    @extend .cuil-padding-bottom-#{$iSize};
+    @extend .cuil-padding-left-#{$iSize};
+    @extend .cuil-padding-right-#{$iSize};
+    padding: #{$iSize};
+  };
+};
 
 @each $iSize in $vSizesPX {
   .cuil-shadow-#{$iSize} {
-    box-shadow: 4px 4px #{$iSize} grey
-  }
-}
+    box-shadow: 4px 4px #{$iSize} grey;
+  };
+};
 
 .cuil-container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-}
+};
 
 } @else {
-  @error "REALLY? DISABLED BOX MODULE?"
-}
+  @error "REALLY? DISABLED BOX MODULE?";
+};

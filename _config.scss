@@ -2,11 +2,6 @@
 $config: (
   // Our modules
   module: (
-    // Vars Module
-    // Does not keep any CSS. Only variables. When disabled, bad things WILL happen.
-    misc_vars: (
-      enabled: true,
-    ),
 
     // Box Module
     // Basic layout.
@@ -61,6 +56,9 @@ $config: (
       // Changing next 2 options is not recommended
       step: 5,
       step_count: 5,
+
+      // For buttons
+      btn_on: true,
     ),
   )
 )

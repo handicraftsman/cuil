@@ -1,14 +1,5 @@
-$mvars_info: map-get(map-get($config, module), misc_vars);
-
-// Export variables
-$vSides: null;
-$vSizesPX: null;
-$vTextSizesPX: null;
-
-@if map-get($mvars_info, enabled) == true {
-
 // Sides
-$vSides: "-left", "-right", "-top", "-bottom", "";
+$vSides: "-left", "-right", "-top", "-bottom";
 
 // Sizes - normal
 $vSizesPX: 0, 2px, 4px, 8px, 12px, 16px, 24px;
@@ -23,5 +14,3 @@ $vTextSizesPX: (
   "xxlarge": 36px,
   "jumbo": 64px,
 );
-
-}
