@@ -43,6 +43,11 @@ $mbox_info: map-get(map-get($config, module), box);
   margin-left: auto;
 };
 
+.cuil-content {
+  max-width: 980px;
+  margin: auto;
+};
+
 } @else {
   @error "REALLY? DISABLED BOX MODULE?";
 };

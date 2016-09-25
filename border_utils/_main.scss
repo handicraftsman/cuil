@@ -6,6 +6,12 @@ $mborderUtils_info: map-get(map-get($config, module), border_utils);
   .cuil-bround-#{$iSize} {
     border-radius: #{$iSize};
   };
+
+  @each $iType, $iCorn in $vCorners {
+    .cuil-bround-#{$iType}-#{$iSize} {
+      border-#{$iCorn}-radius: $iSize;
+    };
+  };
 };
 
 }
