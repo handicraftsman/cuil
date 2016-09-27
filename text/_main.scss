@@ -1,7 +1,6 @@
 $mtext_info: map-get(map-get($config, module), text);
 
 // Declare external variables
-$vTextSizesPX: null;
 $vFontFamily: null;
 $vFontSize: null;
 $vFontColor: null;
