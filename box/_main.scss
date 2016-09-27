@@ -49,5 +49,5 @@ $mbox_info: map-get(map-get($config, module), box);
 };
 
 } @else {
-  @error "REALLY? DISABLED BOX MODULE?";
+  @error "REALLY? DISABLED BOX MODULE?"; // :D
 };
