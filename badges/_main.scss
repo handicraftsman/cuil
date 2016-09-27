@@ -25,10 +25,7 @@ $mbadges_info: map-get(map-get($config, module), badges);
 
   display: inline-block;
 
-  width: 98%;
-  .cuil-badge-small {
-    width: auto;
-  };
+  width: auto;
 };
 
 code {
@@ -37,11 +34,16 @@ code {
   @extend .cuil-badge;
 };
 
+pre {
+  margin-bottom: 0;
+}
+
 pre code {
   @extend code;
-  @extend .cuil-shadow-4px;
-  margin: 8px;
-  padding: 4px;
+  //@extend .cuil-shadow-4px;
+  margin: 0;
+  //padding: 4px;
+  width: 98%;
 };
 
 kbd {
